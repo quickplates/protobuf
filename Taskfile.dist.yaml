@@ -77,9 +77,10 @@ tasks:
         copier
         --overwrite
         --defaults
-        --data 'username=username'
-        --data 'project_name=example'
-        --data 'description=Project example'
+        --vcs-ref HEAD
+        --data 'username=quickplates'
+        --data 'project_name=protobuf-example'
+        --data 'description=Protocol Buffers project example 📜'
         {{.CLI_ARGS}}
         ./
         ./build/
