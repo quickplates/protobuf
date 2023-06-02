@@ -80,7 +80,7 @@ tasks:
         --vcs-ref HEAD
         --data 'username=quickplates'
         --data 'project_name=protobuf-example'
-        --data 'description=Protocol Buffers project example 📜'
+        --data 'description=Protocol Buffers API example 📜'
         {{.CLI_ARGS}}
         ./
         ./build/
