@@ -35,6 +35,7 @@
     "*.scss?? endif ??": "scss",
     "*.ts?? endif ??": "typescript",
     "*.tsx?? endif ??": "typescriptreact",
-    "*.yaml?? endif ??": "yaml"
+    "*.yaml?? endif ??": "yaml",
+    "*.proto?? endif ??": "proto"
   }
 }

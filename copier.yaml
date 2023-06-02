@@ -18,6 +18,17 @@ repository:
   help: The URL of the GitHub repository where you will host your project
   default: "https://github.com/{{ username }}/{{ project_name }}"
 
+docs:
+  type: bool
+  help: Whether to include a documentation site for your project
+  default: true
+
+docs_url:
+  type: str
+  help: The URL of the documentation site for your project
+  default: "https://{{ username }}.github.io/{{ project_name }}"
+  when: "{{ docs }}"
+
 # Configuration
 
 _subdirectory: src
