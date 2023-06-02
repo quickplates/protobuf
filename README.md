@@ -15,7 +15,7 @@ Protocol Buffers API template 📜
 ## 💡 About
 
 This repository containts a [`copier`](https://copier.readthedocs.io) template
-for creating `Protocol Buffers` APIs.
+for creating [`Protocol Buffers`](https://protobuf.dev) APIs.
 
 You can view the example project generated from this template
 [**here**](https://github.com/quickplates/protobuf-example).
