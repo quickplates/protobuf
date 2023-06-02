@@ -2,7 +2,7 @@
 
 <div align="center">
 
-Protocol Buffers project template 📜
+Protocol Buffers API template 📜
 
 [![Lint](https://github.com/quickplates/protobuf/actions/workflows/lint.yaml/badge.svg)](https://github.com/quickplates/protobuf/actions/workflows/lint.yaml)
 [![Test](https://github.com/quickplates/protobuf/actions/workflows/test.yaml/badge.svg)](https://github.com/quickplates/protobuf/actions/workflows/test.yaml)
@@ -14,10 +14,11 @@ Protocol Buffers project template 📜
 
 ## 💡 About
 
-Treat this `README.md` as the landing page for people
-that want to **use** your template.
+This repository containts a [`copier`](https://copier.readthedocs.io) template
+for creating `Protocol Buffers` APIs.
 
-Write here whatever you want to tell them.
+You can view the example project generated from this template
+[**here**](https://github.com/quickplates/protobuf-example).
 
 ## 📜 Usage
 
@@ -37,6 +38,7 @@ copier https://github.com/quickplates/protobuf path/to/destination
 - running tasks with [`Task`](https://taskfile.dev)
 - formatting and linting with [`Trunk`](https://trunk.io)
 - continuous integration with [`GitHub Actions`](https://github.com/features/actions)
+- automatic documentation with [`Protobuffet`](https://protobuffet.com)
 
 ## 💻 Development
 

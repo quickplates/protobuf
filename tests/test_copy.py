@@ -9,9 +9,9 @@ def data() -> dict[str, str]:
     """Return a dictionary with the data to be used in the template."""
 
     return {
-        "username": "username",
-        "project_name": "example",
-        "description": "Project example",
+        "username": "quickplates",
+        "project_name": "protobuf-example",
+        "description": "Protocol Buffers API example 📜",
     }
 
 
