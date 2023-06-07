@@ -53,13 +53,15 @@
             name = "dev";
 
             packages = [
-              pkgs.nil
-              pkgs.copier
-              pkgs.go-task
-              pkgs.trunk-io
-              pkgs.buf
               {%- if docs %}
               pkgs.nodejs
+              {%- endif %}
+              pkgs.nil
+              pkgs.go-task
+              pkgs.trunk-io
+              pkgs.copier
+              pkgs.buf
+              {%- if docs %}
               pkgs.protoc-gen-doc
               {%- endif %}
             ];
@@ -69,8 +71,8 @@
             name = "template";
 
             packages = [
-              pkgs.copier
               pkgs.go-task
+              pkgs.copier
             ];
           };
 
@@ -88,9 +90,9 @@
             name = "docs";
 
             packages = [
+              pkgs.nodejs
               pkgs.go-task
               pkgs.buf
-              pkgs.nodejs
               pkgs.protoc-gen-doc
             ];
           };
