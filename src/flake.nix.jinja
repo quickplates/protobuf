@@ -34,7 +34,19 @@
         pkgs,
         system,
         ...
-      }: {
+      }: let
+        {%- if docs %}
+        node = pkgs.nodejs;
+        {%- endif %}
+        nil = pkgs.nil;
+        task = pkgs.go-task;
+        trunk = pkgs.trunk-io;
+        copier = pkgs.copier;
+        buf = pkgs.buf;
+        {%- if docs %}
+        protoc-gen-doc = pkgs.protoc-gen-doc;
+        {%- endif %}
+      in {
         # Override pkgs argument
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
@@ -54,15 +66,15 @@
 
             packages = [
               {%- if docs %}
-              pkgs.nodejs
+              node
               {%- endif %}
-              pkgs.nil
-              pkgs.go-task
-              pkgs.trunk-io
-              pkgs.copier
-              pkgs.buf
+              nil
+              task
+              trunk
+              copier
+              buf
               {%- if docs %}
-              pkgs.protoc-gen-doc
+              protoc-gen-doc
               {%- endif %}
             ];
           };
@@ -71,8 +83,8 @@
             name = "template";
 
             packages = [
-              pkgs.go-task
-              pkgs.copier
+              task
+              copier
             ];
           };
 
@@ -80,8 +92,8 @@
             name = "lint";
 
             packages = [
-              pkgs.go-task
-              pkgs.trunk-io
+              task
+              trunk
             ];
           };
           {%- if docs %}
@@ -90,10 +102,10 @@
             name = "docs";
 
             packages = [
-              pkgs.nodejs
-              pkgs.go-task
-              pkgs.buf
-              pkgs.protoc-gen-doc
+              node
+              task
+              buf
+              protoc-gen-doc
             ];
           };
           {%- endif %}
