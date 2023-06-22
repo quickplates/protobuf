@@ -10,7 +10,7 @@ def data() -> dict[str, str]:
 
     return {
         "username": "quickplates",
-        "project_name": "protobuf-example",
+        "projectname": "protobuf-example",
         "description": "Protocol Buffers API example 📜",
     }
 
