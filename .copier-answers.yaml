@@ -1,8 +1,7 @@
 ---
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: 0.2.4
+_commit: 0.3.0
 _src_path: gh:quickplates/meta
 description: Protocol Buffers API template 📜
-project_name: protobuf
-repository: https://github.com/quickplates/protobuf
+projectname: protobuf
 username: quickplates

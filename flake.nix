@@ -35,12 +35,12 @@
         system,
         ...
       }: let
+        pytest = pkgs.python3.withPackages (ps: [ps.pytest ps.plumbum]);
         nil = pkgs.nil;
         task = pkgs.go-task;
         trunk = pkgs.trunk-io;
         # Build copier manually, because the nixpkgs version is outdated
         copier = pkgs.callPackage ./copier.nix {};
-        pytest = pkgs.python3.withPackages (ps: [ps.pytest ps.plumbum]);
       in {
         # Override pkgs argument
         _module.args.pkgs = import inputs.nixpkgs {
@@ -48,6 +48,10 @@
           config = {
             # Allow packages with non-free licenses
             allowUnfree = true;
+            # Allow packages with broken dependencies
+            allowBroken = true;
+            # Allow packages with unsupported system
+            allowUnsupportedSystem = true;
           };
         };
 
@@ -60,11 +64,11 @@
             name = "dev";
 
             packages = [
+              pytest
               nil
               task
               trunk
               copier
-              pytest
             ];
           };
 
@@ -90,9 +94,9 @@
             name = "test";
 
             packages = [
+              pytest
               task
               copier
-              pytest
             ];
           };
         };
