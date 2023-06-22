@@ -12,11 +12,11 @@ def data() -> dict[str, str]:
 
     return {
         "username": "quickplates",
-        "project_name": "protobuf-example",
+        "projectname": "protobuf-example",
         "description": "Protocol Buffers API example 📜",
         "repository": "https://github.com/quickplates/protobuf-example",
         "docs": "true",
-        "docs_url": "https://quickplates.github.io/protobuf-example",
+        "docsurl": "https://quickplates.github.io/protobuf-example",
     }
 
 
@@ -34,6 +34,7 @@ def copied_template_directory(
         copier.run_copy(
             str(cloned_template_directory),
             str(tmp_path),
+            defaults=True,
             data=data,
             vcs_ref="HEAD",
             quiet=True,

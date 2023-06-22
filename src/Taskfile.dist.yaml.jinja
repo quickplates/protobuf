@@ -12,10 +12,10 @@ tasks:
     cmds:
       - >
         copier
+        update
         --answers-file
         .copier-answers.yaml
-        {{ '{{.CLI_ARGS}}' }}
-        update
+        {{ '{{ .CLI_ARGS }}' }}
   update-flake-lock:
     desc: Update flake.lock
     cmds:
@@ -26,21 +26,21 @@ tasks:
         --no-warn-dirty
         flake
         update
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   fmt:
     desc: Format files
     cmds:
       - >
         trunk
         fmt
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   lint:
     desc: Lint files
     cmds:
       - >
         trunk
         check
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   {%- if docs %}
   install-docs:
     desc: Install docs dependencies
@@ -54,7 +54,7 @@ tasks:
         --no-fund
         --quiet
         --no-progress
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   docs:
     desc: Run docusaurus
     dir: docs
@@ -69,7 +69,7 @@ tasks:
         run
         docs
         --
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   test-docs:
     desc: Test docs
     dir: docs
@@ -83,7 +83,7 @@ tasks:
         run
         test
         --
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   update-docs-deps:
     desc: Update docs dependencies
     dir: docs
@@ -97,7 +97,7 @@ tasks:
         run
         update
         --
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
   {%- endif %}
   clean:
     desc: Clean outputs
@@ -106,7 +106,7 @@ tasks:
         rm
         --recursive
         --force
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
         ./build/
   build:
     desc: Generate outputs
@@ -118,4 +118,4 @@ tasks:
       - >
         buf
         generate
-        {{ '{{.CLI_ARGS}}' }}
+        {{ '{{ .CLI_ARGS }}' }}
