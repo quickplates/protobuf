@@ -63,6 +63,10 @@ tasks:
     sources:
       - ./package.json
       - ./package-lock.json
+      - ../flake.lock
+      - ../*.nix
+      - ../Taskfile.dist.{yaml,yml}
+      - ../{taskfile,Taskfile}.{yaml,yml}
     generates:
       - ./node_modules/**/*
     cmds:
