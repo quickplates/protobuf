@@ -37,5 +37,7 @@
     "*.tsx?? endif ??": "typescriptreact",
     "*.yaml?? endif ??": "yaml",
     "*.proto?? endif ??": "proto"
-  }
+  },
+  // Don't scan for git repositories other than the workspace root
+  "git.autoRepositoryDetection": false
 }
