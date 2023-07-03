@@ -40,7 +40,11 @@ copier gh:quickplates/protobuf .
 - continuous integration with [`GitHub Actions`](https://github.com/features/actions)
 - automatic documentation with [`Protobuffet`](https://protobuffet.com)
 
-## 💻 Development
+## 💻 Contributing and Development
 
 Read more about how to contribute and develop the project
 [here](https://github.com/quickplates/protobuf/blob/main/CONTRIBUTING.md).
+
+If you have any ideas on how to improve this template,
+please open an issue or submit a pull request.
+All contributions are welcome! 🤗
