@@ -16,10 +16,6 @@ sudo mkdir -p "/trunk/${USER}"
 sudo chown -R "${USER}:" "/trunk/${USER}"
 {%- if docs %}
 
-# Setup docs node modules
-sudo mkdir -p "/workspace/docs/node_modules"
-sudo chown -R "${USER}:" "/workspace/docs/node_modules"
-
 # Setup npm cache
 sudo mkdir -p "/npm/${USER}"
 sudo chown -R "${USER}:" "/npm/${USER}"
