@@ -30,6 +30,9 @@ tasks:
   fmt:
     desc: Format files
     cmds:
+      {%- if docs %}
+      - task: install-docs-internal
+      {%- endif %}
       - >
         trunk
         fmt
@@ -37,13 +40,16 @@ tasks:
   lint:
     desc: Lint files
     cmds:
+      {%- if docs %}
+      - task: install-docs-internal
+      {%- endif %}
       - >
         trunk
         check
         {{ '{{ .CLI_ARGS }}' }}
   {%- if docs %}
-  clean-docs:
-    desc: Clean docs
+  remove-docs-node-modules:
+    desc: Clean docs node_modules
     dir: docs
     cmds:
       - >
@@ -137,11 +143,19 @@ tasks:
         '!'
         -d
         ./build/
+  purge:
+    desc: Clean everything
+    cmds:
+      - defer:
+          task: clean
+      {%- if docs %}
+      - defer:
+          task: remove-docs-node-modules
+      {%- endif %}
   build:
     desc: Build outputs
     sources:
       - ./src/**/*
-      - ./.gitignore
       - buf.*.{yaml,yml}
       - ./flake.lock
       - ./*.nix

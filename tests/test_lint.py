@@ -15,6 +15,7 @@ def data() -> dict[str, str]:
         "projectname": "protobuf-example",
         "description": "Protocol Buffers API example 📜",
         "repository": "https://github.com/quickplates/protobuf-example",
+        "releases": "true",
         "docs": "true",
         "docsurl": "https://quickplates.github.io/protobuf-example",
     }
@@ -34,7 +35,6 @@ def copied_template_directory(
         copier.run_copy(
             str(cloned_template_directory),
             str(tmp_path),
-            defaults=True,
             data=data,
             vcs_ref="HEAD",
             quiet=True,
@@ -47,7 +47,7 @@ def copied_template_directory(
 
 
 def test_lint(copied_template_directory: Path) -> None:
-    """Test that the template can be linted without errors."""
+    """Test that the project can be linted without errors."""
 
     with CWD(copied_template_directory):
         local.cmd.nix(

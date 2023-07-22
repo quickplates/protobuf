@@ -7,11 +7,16 @@ username:
 
 projectname:
   type: str
-  help: The name of your project
+  help: The name of the project
 
 description:
   type: str
-  help: A short description of your project
+  help: A short description of the project
+
+releases:
+  type: bool
+  help: Whether you plan to make releases
+  default: true
 
 docs:
   type: bool

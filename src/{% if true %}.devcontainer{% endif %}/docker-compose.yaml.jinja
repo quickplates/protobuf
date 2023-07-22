@@ -26,8 +26,6 @@ services:
       # Mount the trunk cache into the container at /trunk
       - trunk:/trunk
       {%- if docs %}
-      # Mount the docs npm modules into the container at appropriate location
-      - docsmodules:/workspace/docs/node_modules
       # Mount the npm cache into the container at /npm
       - npm:/npm
       {%- endif %}
@@ -38,6 +36,5 @@ volumes:
   shellhistory: {}
   trunk: {}
   {%- if docs %}
-  docsmodules: {}
   npm: {}
   {%- endif %}
