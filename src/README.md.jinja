@@ -4,9 +4,9 @@
 
 {{ description }}
 
-[![Lint](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/lint.yaml/badge.svg)](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/lint.yaml)
+[![Lint]({{ repourl }}/actions/workflows/lint.yaml/badge.svg)]({{ repourl }}/actions/workflows/lint.yaml)
 {%- if docs %}
-[![Docs](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/docs.yaml/badge.svg)](https://github.com/{{ username }}/{{ projectname }}/actions/workflows/docs.yaml)
+[![Docs]({{ repourl }}/actions/workflows/docs.yaml/badge.svg)]({{ repourl }}/actions/workflows/docs.yaml)
 {%- endif %}
 
 </div>
@@ -21,13 +21,13 @@ that want to **use** your API.
 Write here whatever you want to tell them.
 {%- if docs %}
 
-## 📄 Docs
+## 📄 Further Reading
 
-You can find the documentation
+More in-depth documentation can be found
 [here]({{ docsurl }}).
 {%- endif %}
 
 ## 💻 Development
 
 Read more about how to develop the project
-[here](https://github.com/{{ username }}/{{ projectname }}/blob/main/CONTRIBUTING.md).
+[here]({{ repourl }}/blob/main/CONTRIBUTING.md).

@@ -1,9 +1,8 @@
----
 # Questions
 
-username:
+accountname:
   type: str
-  help: Your GitHub username
+  help: The name of the organization on GitHub
 
 projectname:
   type: str
@@ -13,21 +12,31 @@ description:
   type: str
   help: A short description of the project
 
-releases:
-  type: bool
-  help: Whether you plan to make releases
-  default: true
+reponame:
+  type: str
+  help: The name of the repository
+  default: "{{ projectname }}"
+
+repourl:
+  type: str
+  help: The URL of the repository
+  default: "https://github.com/{{ accountname }}/{{ reponame }}"
 
 docs:
   type: bool
-  help: Whether to include a documentation site for your project
+  help: Whether to include a documentation site for the project
   default: true
 
 docsurl:
   type: str
-  help: The URL of the documentation site for your project
-  default: "https://{{ username }}.github.io/{{ projectname }}"
+  help: The URL of the documentation site for the project
+  default: "https://{{ accountname }}.github.io/{{ reponame }}"
   when: "{{ docs }}"
+
+releases:
+  type: bool
+  help: Whether you plan to make releases
+  default: true
 
 # Configuration
 
