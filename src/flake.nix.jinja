@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     };
 
     flake-parts = {
@@ -40,9 +40,9 @@
         {%- endif %}
         nil = pkgs.nil;
         task = pkgs.go-task;
+        coreutils = pkgs.coreutils;
         trunk = pkgs.trunk-io;
-        # Build copier manually, because the nixpkgs version is outdated
-        copier = pkgs.callPackage ./copier.nix {};
+        copier = pkgs.copier;
         buf = pkgs.buf;
         {%- if docs %}
         protoc-gen-doc = pkgs.protoc-gen-doc;
@@ -75,6 +75,7 @@
               {%- endif %}
               nil
               task
+              coreutils
               trunk
               copier
               buf
@@ -82,6 +83,10 @@
               protoc-gen-doc
               {%- endif %}
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
 
           template = pkgs.mkShell {
@@ -89,8 +94,13 @@
 
             packages = [
               task
+              coreutils
               copier
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
 
           lint = pkgs.mkShell {
@@ -101,8 +111,13 @@
               node
               {%- endif %}
               task
+              coreutils
               trunk
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
           {%- if docs %}
 
@@ -112,9 +127,14 @@
             packages = [
               node
               task
+              coreutils
               buf
               protoc-gen-doc
             ];
+
+            shellHook = ''
+              export TMPDIR=/tmp
+            '';
           };
           {%- endif %}
         };
