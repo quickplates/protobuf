@@ -6,10 +6,10 @@ managed:
 
 plugins:
   # Generate TypeScript client/server communication code
-  - plugin: buf.build/connectrpc/es:v1.3.0
+  - plugin: buf.build/connectrpc/es:v1.4.0
     out: build/ts/
     opt: target=ts
   # Generate TypeScript types
-  - plugin: buf.build/bufbuild/es:v1.7.0
+  - plugin: buf.build/bufbuild/es:v1.7.2
     out: build/ts/
     opt: target=ts
