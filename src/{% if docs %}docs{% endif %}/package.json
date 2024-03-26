@@ -7,10 +7,10 @@
     "predocs": "npm run generate",
     "docs": "docusaurus",
     "update": "ncu --peer --doctor --upgrade && npm i --no-audit --no-fund",
-    "postupdate": "rm -rf .tmp/",
+    "postupdate": "rm --recursive --force .tmp/",
     "pretest": "npm run generate",
     "test": "docusaurus build --out-dir .tmp/",
-    "posttest": "rm -rf .tmp/"
+    "posttest": "rm --recursive --force .tmp/"
   },
   "engines": {
     "node": ">=18.0"
