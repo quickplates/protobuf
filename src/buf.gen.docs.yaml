@@ -1,4 +1,4 @@
-version: v1
+version: v2
 
 managed:
   # Enable managed mode to set options in proto files on the fly
@@ -6,7 +6,7 @@ managed:
 
 plugins:
   # Generate documentation metadata
-  - name: doc
+  - local: protoc-gen-doc
     out: docs/generated/
     opt:
       - json,proto.json
