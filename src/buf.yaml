@@ -1,9 +1,4 @@
-version: v1
-
-lint:
-  use:
-    # Use default lint rules
-    - DEFAULT
+version: v2
 
 breaking:
   use:
@@ -12,3 +7,12 @@ breaking:
 
   # Don't fail on breaking changes with unstable API versions
   ignore_unstable_packages: true
+
+lint:
+  use:
+    # Use standard lint rules
+    - STANDARD
+
+modules:
+  # Use module in src directory
+  - path: src/
